@@ -1,0 +1,32 @@
+{
+  "name": "recursive-taxonomy-examples",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "start": "sanity start",
+    "deploy": "sanity deploy",
+    "typegen": "sanity typegen generate"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.24.0",
+    "@sanity/icons": "^3.5.0",
+    "@sanity/uuid": "^3.0.2",
+    "@sanity/vision": "^3.68.0",
+    "groq": "^3.68.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "rxjs": "^7.8.1",
+    "sanity": "^3.68.0",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
