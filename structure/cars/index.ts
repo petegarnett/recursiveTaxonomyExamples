@@ -1,5 +1,5 @@
 import type { SanityDocument } from '@sanity/client'
-import { TbCar, TbDirections, TbSignRight } from 'react-icons/tb'
+import { TbCar, TbDirections, TbSignRight, TbPlus } from 'react-icons/tb'
 import { map } from 'rxjs/operators'
 import type { ListBuilder, StructureBuilder, StructureResolverContext } from 'sanity/structure'
 import { createChildDraftMenuItem } from './createChildDraftMenuItem'
@@ -13,9 +13,6 @@ const type = 'car'
  * This structure displays a recursive list of parents with their children.
  * Based on a parent-child relationship between documents of the same type.
  * Uses observables to fetch and update children reactively.
- *
- * ### Note: This will *not allow* you to add new documents within this structure
- * ### Not very performant, but useful for small to medium sized sites
  */
 export const carsStructure = (
   S: StructureBuilder,
@@ -33,8 +30,19 @@ export const carsStructure = (
         map<SanityDocument[], ListBuilder>((documents) => {
           return S.list()
             .title('Car Categories')
-            .items(
-              documents.map((parent) => {
+            .items([
+              // Create new top-level car (no parent)
+              S.listItem()
+                .title('➕ Create New Car')
+                .icon(TbPlus)
+                .child(
+                  S.documentTypeList('car')
+                    .title('All Cars')
+                    .filter('_type == "car"')
+                ),
+              S.divider(),
+              // Existing cars hierarchy
+              ...documents.map((parent) => {
                 const hasChildren = parent.children
 
                 return hasChildren
@@ -91,7 +99,7 @@ export const carsStructure = (
                       .title(parent.title || 'Untitled')
                       .icon(TbSignRight)
               }),
-            )
+            ])
         }),
       )
     })
