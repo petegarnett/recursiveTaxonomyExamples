@@ -1,3 +1,4 @@
+import { TbSettings } from 'react-icons/tb'
 import type { StructureResolver } from 'sanity/structure'
 import { carsStructure } from './cars'
 import { bikesStructure } from './bikes'
@@ -35,9 +36,10 @@ export const structure: StructureResolver = (S, context) =>
       
       // Example 2: Settings-based navigation (Bikes)
       bikesStructure(S, context),
-      // Bike Settings singleton
+      // Bike Settings singleton - CLICK HERE FIRST to set up navigation
       S.listItem()
-        .title('Bike Settings')
+        .title('⚙️ Bike Settings (Edit Navigation Here)')
+        .icon(TbSettings)
         .child(
           S.document()
             .schemaType('bikeSettings')
