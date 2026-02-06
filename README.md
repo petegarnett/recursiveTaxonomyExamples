@@ -1,48 +1,8 @@
-# Recursive Taxonomy Examples - Sanity V5 Studio
+# Sanity Studio Examples
 
-This project demonstrates three different approaches to building recursive/hierarchical document structures in Sanity Studio V5 using the Structure Builder API.
+This project demonstrates advanced Sanity Studio patterns and custom input components. Currently focused on the **Async URL Slug Preview** feature, with recursive taxonomy examples coming soon.
 
-## Examples
-
-### Example 1: Cars - Recursive Parent-Child Structure
-
-**Pattern:** Self-referencing documents with a `parent` field
-
-Documents reference other documents of the same type, creating a tree structure. Uses RxJS observables for reactive updates.
-
-**Use case:** Hierarchical categories, nested pages, organizational structures
-
-**Files:**
-- `structure/cars/index.ts` - Main structure
-- `structure/cars/queries.ts` - Observable queries for parents/children
-- `structure/cars/createChildDraftMenuItem.ts` - Menu action to create child documents
-
-### Example 2: Bikes - Settings-Based Navigation
-
-**Pattern:** Singleton settings document with nested navigation arrays
-
-Navigation structure is defined in a single settings document with nested arrays. Each menu item can reference a target document and have sub-navigation.
-
-**Use case:** Menu-driven navigation, site structure defined by editors
-
-**Files:**
-- `structure/bikes/index.ts` - Main structure + MenuItem interface
-- `structure/bikes/queries.ts` - Observable queries for navigation
-- `structure/bikes/childList.ts` - Recursive child list builder
-- `structure/bikes/detailDocListItem.ts` - Single document list item
-
-### Example 3: Clothing - Simple Category Filter
-
-**Pattern:** Built-in `documentTypeList` with `.child()` and `.filter()`
-
-The simplest approach - show categories, then filter items by selected category.
-
-**Use case:** Simple category → items relationships, product catalogs
-
-**Files:**
-- `structure/clothing/index.ts` - Complete structure in one file
-
-### Example 4: Articles - Async URL Slug Preview
+## Current Example: Async URL Slug Preview
 
 **Pattern:** Custom input component with dynamic URL prefix generation
 
@@ -100,18 +60,19 @@ pnpm typegen
 - Sanity V5
 - TypeScript
 - pnpm
-- RxJS (for reactive queries)
+- React (for custom components)
 
-## Structure Comparison
+## Coming Soon: Recursive Taxonomy Examples
 
-| Feature | Cars | Bikes | Clothing |
-|---------|------|-------|----------|
-| Complexity | High | High | Low |
-| RxJS Required | Yes | Yes | No |
-| Nesting Depth | Unlimited | Unlimited | 1 level |
-| Data Model | Self-referencing | Settings array | Category reference |
-| Real-time Updates | Yes | Yes | Yes |
-| Create Children in Structure | Yes | No | No |
+This project will include three different approaches to building recursive/hierarchical document structures in Sanity Studio V5:
+
+| Pattern | Description | Use Case | Complexity |
+|---------|-------------|----------|------------|
+| **Cars** | Self-referencing documents with `parent` field | Hierarchical categories, nested pages | High |
+| **Bikes** | Settings-based navigation with nested arrays | Menu-driven navigation, editor-defined structure | High |
+| **Clothing** | Simple category filter using `.child()` | Product catalogs, category → items | Low |
+
+These examples will demonstrate different approaches to recursive structures using the Structure Builder API and RxJS observables.
 
 ## License
 
