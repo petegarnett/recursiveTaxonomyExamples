@@ -1,21 +1,10 @@
-// Example 1: Cars - Recursive parent-child structure
-import { car } from './car'
+import { article } from './article'
 
-// Example 2: Bikes - Settings-based navigation
-import { bike } from './bike'
-import { bikeSettings } from './bikeSettings'
-
-// Example 3: Clothing - Simple category filter
-import { clothing } from './clothing'
-import { clothingCategory } from './clothingCategory'
+// Objects
+import { urlSlugObject } from './objects/urlSlug'
 
 export const schemaTypes = [
-  // Example 1
-  car,
-  // Example 2
-  bike,
-  bikeSettings,
-  // Example 3
-  clothing,
-  clothingCategory,
+  // Objects
+  urlSlugObject,
+  article,
 ]

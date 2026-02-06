@@ -9,7 +9,7 @@ export default defineConfig({
   title: 'Recursive Taxonomy Examples',
 
   // TODO: Replace with your project ID and dataset
-  projectId: 'your-project-id',
+  projectId: 'blia7jr1',
   dataset: 'production',
 
   plugins: [

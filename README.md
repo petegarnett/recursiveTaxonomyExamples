@@ -42,6 +42,30 @@ The simplest approach - show categories, then filter items by selected category.
 **Files:**
 - `structure/clothing/index.ts` - Complete structure in one file
 
+### Example 4: Articles - Async URL Slug Preview
+
+**Pattern:** Custom input component with dynamic URL prefix generation
+
+A custom Sanity input component that shows a live URL preview with an asynchronously generated prefix. The prefix updates automatically based on document fields (like language, category, etc.).
+
+**Use case:** Internationalized content, dynamic URL structures, SEO-friendly URLs
+
+**Features:**
+- Live URL preview with prefix (e.g., `en-US/articles/my-slug`)
+- Async prefix generation based on document fields
+- Loading states during prefix resolution
+- Auto-slug generation from title
+- Full URL tracking for frontend routing
+
+**Files:**
+- `schemas/article.ts` - Example document using the feature
+- `schemas/objects/urlSlug.ts` - Custom urlSlug object type
+- `lib/components/AsyncUrlSlugInput/` - React component and hook
+- `lib/helpers/slugGeneration.ts` - Core logic for prefix resolution
+- `lib/constants/urlPrefixes.ts` - URL prefix configuration
+
+See [ASYNC_URL_SLUG.md](./ASYNC_URL_SLUG.md) for detailed documentation.
+
 ## Getting Started
 
 ### Prerequisites
