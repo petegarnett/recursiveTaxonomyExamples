@@ -11,6 +11,20 @@ export const article = defineType({
   title: 'Article',
   type: 'document',
   icon: DocumentTextIcon,
+  fieldsets: [
+    {
+      name: 'publishingMetadata',
+      options: {
+        columns: 3,
+      },
+    },
+  ],
+  groups: [
+
+    {
+      name: 'metadata',
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -50,6 +64,30 @@ export const article = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+     // PUBLISHING METADATA
+     defineField({
+      name: 'publishedDate',
+      title: 'First Published',
+      type: 'date',
+      description: 'When the article was first published',
+      fieldset: 'publishingMetadata',
+      group: 'metadata',
+    }),
+    defineField({
+      name: 'updatedDate',
+      title: 'Last Updated',
+      type: 'date',
+      description: 'When the article was last updated',
+      fieldset: 'publishingMetadata',
+      group: 'metadata',
+    }),
+    defineField({
+      name: 'readingTime',
+      type: 'number',
+      description: 'Estimated reading time in minutes',
+      fieldset: 'publishingMetadata',
+      group: 'metadata',
+    }),
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
@@ -62,11 +100,8 @@ export const article = defineType({
       type: 'array',
       of: [{ type: 'block' }],
     }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
+
+   
   ],
   preview: {
     select: {
