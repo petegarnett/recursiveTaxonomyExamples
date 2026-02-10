@@ -24,7 +24,9 @@ A custom Sanity input component that shows a live URL preview with an asynchrono
 - `lib/helpers/slugGeneration.ts` - Core logic for prefix resolution
 - `lib/constants/urlPrefixes.ts` - URL prefix configuration
 
-See [ASYNC_URL_SLUG.md](./ASYNC_URL_SLUG.md) for detailed documentation.
+**Documentation:**
+- [ASYNC_URL_SLUG.md](./ASYNC_URL_SLUG.md) - Complete async URL slug feature guide
+- [PUBLISHING_METADATA.md](./PUBLISHING_METADATA.md) - Fieldsets and groups explained
 
 ## Getting Started
 
